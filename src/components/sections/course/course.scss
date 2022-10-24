@@ -1,0 +1,127 @@
+.course {
+	height: 600px;
+	position: relative;
+
+	&__content {
+		padding-top: 90px;
+		margin: 0 165px;
+		font-family: Poppins, sans-serif;
+
+		&-title {
+			font-weight: 600;
+			font-size: 35px;
+			line-height: 35px;
+			margin-bottom: 15px;
+			color: #000;
+		}
+
+		&-desc {
+			font-weight: 400;
+			font-size: 16px;
+			line-height: 30px;
+			color: #BDBDBD;
+			margin-bottom: 67px;
+		}
+
+		&-cards {
+			display: flex;
+			justify-content: space-between;
+
+			&-item {
+				width: 350px;
+				background: #fff;
+
+				.img {
+					margin-bottom: 15px;
+				}
+
+				.title {
+					margin-left: 16px;
+					font-weight: 600;
+					font-size: 17px;
+					line-height: 25.5px;
+					color: #000;
+					margin-bottom: 10px;
+				}
+
+				.scope {
+					margin-left: 16px;
+					font-weight: 500;
+					font-size: 14px;
+					line-height: 20px;
+					color: #878787;
+					margin-bottom: 33px;
+				}
+
+				.info {
+					display: flex;
+					margin-left: 30px;
+					font-weight: 500;
+					font-size: 14px;
+					line-height: 14px;
+					letter-spacing: 0.01em;
+
+					&__price {
+						margin-right: 40px;
+					}
+
+					&__hours {
+						color: #4D4D52;
+						margin-right: 27px;
+						position: relative;
+						padding-left: 20px;
+						
+						&:before {
+							content: '';
+							background: url("../../../assets/img/svg/watch-ico.svg") no-repeat;
+							background-size: cover;
+							position: absolute;
+							height: 16px;
+							width: 17px;
+							left: 0;
+							top: 0;
+						} 
+					}
+
+					&__articles {
+						color: #4D4D52;
+						position: relative;
+						padding-left: 13px;
+
+						&:before {
+							content: '';
+							background: url("../../../assets/img/svg/file-ico.svg") no-repeat;
+							background-size: cover;
+							position: absolute;
+							height: 14px;
+							width: 10px;
+							left: 0;
+							top: 0;
+						}
+					}
+				}
+
+			}
+		}
+	}
+
+	&__dec-img-1 {
+		position: absolute;
+		top: 196px;
+		left: -47px;
+
+		img {
+			width: 93px;
+		}
+	}
+
+	&__dec-img-2 {
+		position: absolute;
+		right: 0;
+		bottom: 0;
+
+		img {
+			width: 59px;
+		}
+	}
+}

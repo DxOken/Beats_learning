@@ -1,0 +1,19 @@
+include /components/sections/header/header
+include /components/sections/footer/footer
+
+//- Vars
+block vars
+
+doctype html
+html(lang="en")
+    head
+        meta(charset='UTF-8')
+
+
+        block head
+    body
+        +section-header
+
+        block content
+
+        +section-footer

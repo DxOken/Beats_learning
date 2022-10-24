@@ -1,0 +1,75 @@
+.footer {
+	height: 462px;
+	padding-top: 151px;
+
+	&__content {
+		margin-left: 136px;
+		margin-right: 74px;
+		display: flex;
+		justify-content: space-between;
+
+		&-sitemap {
+			display: flex;
+			width: 100%;
+			justify-content: space-between;
+
+			&-section {
+				font-family: Poppins, sans-serif;
+
+				.title {
+					font-weight: 600;
+					font-size: 20px;
+					line-height: 25px;
+					color: #1C1C1D;
+					margin-bottom: 40px;
+				}
+
+				.links {
+					display: flex;
+					flex-direction: column;
+
+					font-weight: 400;
+					font-size: 16px;
+					line-height: 24px;
+
+
+					.item {
+						text-decoration: none;
+						color: #7a7a7e;
+
+						margin-bottom: 18px;
+					}
+				}
+
+				&:last-child {
+					margin-right: 130px;
+				}
+			}
+		}
+
+		&-contact {
+			&-social {
+				display: flex;
+				justify-content: space-between;
+				margin-left: 73px;
+				margin-right: 20px;
+				margin-bottom: 25px;
+
+				.title {
+					font-family: Poppins, sans-serif;
+					font-weight: 600;
+					font-size: 20px;
+					line-height: 25px;
+					color: #1c1c1d;
+				}
+
+				.social-list {
+
+					.item {
+						margin-left: 16px;
+					}
+				}
+			}
+		}
+	}
+}

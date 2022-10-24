@@ -1,0 +1,26 @@
+//- Layout
+extends /layout/main/main
+
+include /components/sections/main/main
+include /components/sections/blog/blog
+include /components/sections/features/features
+include /components/sections/course/course
+include /components/sections/trial/trial
+include /components/sections/subscribe/subscribe
+
+block head
+    title= 'Beats Learning'
+
+block content
+
+    +section-main
+
+    +section-blog
+
+    +section-features
+
+    +section-course
+
+    +section-trial
+
+    +section-subscribe

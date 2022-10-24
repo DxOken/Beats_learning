@@ -1,0 +1,23 @@
+include /components/elements/button/button
+
+mixin section-header
+    .header
+        .header__content
+            .header__logo
+                img(src='assets/img/svg/logo.svg')
+            ul.header__menu
+                li.header__menu-item
+                    a(href='#home')= 'Home'
+                li.header__menu-item
+                    a(href='#blog')= 'About Us'
+                li.header__menu-item
+                    a(href='#course')= 'Courses'
+                li.header__menu-item
+                    a(href='#')= 'Apparentiships'
+                li.header__menu-item
+                    a(href='#')= 'More'
+            .header__btns
+                .header__btns-sign-up
+                    +button('text', 'Sign up')
+                .header__btns-sign-in
+                    +button('fill', 'Login')

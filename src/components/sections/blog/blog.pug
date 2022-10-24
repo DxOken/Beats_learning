@@ -1,0 +1,16 @@
+include /components/elements/button/button
+
+mixin section-blog
+    .blog#blog
+        .blog__content
+            .blog__content-img
+                img(src='assets/img/cards.png')
+            .blog__content-info
+                .blog__content-info-title= 'Get the Best Class by the Best Teachers'
+                .blog__content-info-desc= 'Get your best class and gain the great thing from the best and well qualified experienced teachers all over the world and get shinny. We are a unique training provider willing to give you all the skills and experience you need to fulfil your future career'
+                .blog__content-info-btn
+                    +button('text-arrow', 'Read more')
+        .blog__dec-img-1
+            img(src='assets/img/svg/dec-2-1.svg')
+        .blog__dec-img-2
+            img(src='assets/img/svg/dec-2-2.svg')

@@ -1,0 +1,91 @@
+.main {
+	position: relative;
+	overflow: hidden;
+
+	&__content {
+		position: relative;
+		height: 700px;
+		margin-left: 115px;
+		display: flex;
+
+		&-info {
+			font-family: 'Poppins', sans-serif;
+
+			&-desc {
+				margin-top: 80px;
+				font-weight: 500;
+				font-size: 20px;
+				line-height: 30px;
+				letter-spacing: 0.235em;
+
+				color: #2F2B71;
+			}
+
+			&-title {
+				margin-top: 15px;
+				margin-left: -5px;
+				font-weight: 700;
+				font-size: 70px;
+				line-height: 82px;
+				width: 700px;
+
+				color: #5F596E;
+			}
+
+			&-text {
+				margin-top: 30px;
+				font-weight: 500;
+				font-size: 20px;
+				line-height: 31px;
+				letter-spacing: 0.05em;
+
+				color: #000;
+			}
+
+			&-btn {
+				margin-top: 40px;
+			}
+		}
+
+		&-img {
+			position: absolute;
+			right: -420px;
+			top: 0;
+
+		}
+	}
+
+	&__dec-img-1 {
+		position: absolute;
+		top: -60px;
+		left: -35px;
+	}
+	&__dec-img-2 {
+		position: absolute;
+		top: 0;
+		left: 50%;
+	}
+	&__dec-img-3 {
+		position: absolute;
+		top: 70px;
+		right: -38px;
+	}
+	&__dec-img-4 {
+		position: absolute;
+		left: -16px;
+		bottom: 20px;
+	}
+	&__dec-img-5 {
+		position: absolute;
+		bottom: 10px;
+		left: 38%;
+		transform: translate(-50%, 0);
+	}
+	&__dec-img-6 {
+		position: absolute;
+		right: 0;
+		bottom: 160px;
+	}
+
+
+}

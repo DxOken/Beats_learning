@@ -1,0 +1,19 @@
+include /components/elements/button/button
+
+mixin section-subscribe
+    .subscribe
+        .subscribe__content
+            .subscribe__content-form
+                .subscribe__content-form-desc= 'newsletter'
+                .subscribe__content-form-title= 'Subscribe Our Newsletter'
+                .subscribe__content-form-input
+                    input(placeholder='Enter your mail ...')
+                    +button('fill-arrow')
+            .subscribe__content-img
+                img(src='assets/img/subscribe-img.png')
+            .subscribe__dec-img-1
+                img(src='assets/img/svg/dec-6-1.svg')
+            .subscribe__dec-img-2
+                img(src='assets/img/svg/dec-6-2.svg')
+        .subscribe__dec-img-3
+            img(src='assets/img/svg/dec-6-3.svg')

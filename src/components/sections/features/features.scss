@@ -1,0 +1,64 @@
+.features {
+	height: 520px;
+	position: relative;
+
+	&__content {
+		padding-top: 130px;
+		margin: 0 170px;
+
+		&-features {
+			display: flex;
+			justify-content: space-between;
+
+
+			&-card {
+				width: 305px;
+				font-family: Poppins, sans-serif;
+
+
+
+				.ico {
+					display: flex;
+					justify-content: center;
+					margin-bottom: 32px;
+				}
+
+				.title {
+					font-weight: 500;
+					font-size: 24px;
+					line-height: 24px;
+					text-align: center;
+					color: #1E1E1E;
+					margin-bottom: 18px;
+				}
+
+				.desc {
+					font-weight: 400;
+					font-size: 16px;
+					line-height: 28px;
+					text-align: center;
+					color: #757575;
+				}
+
+				&:nth-child(2) {
+					.ico {
+						margin-bottom: 50px;
+					}
+				}
+			}
+		}
+	}
+
+	&__dec-img-1 {
+		position: absolute;
+		top: 153px;
+		left: -66px;
+
+	}
+
+	&__dec-img-2 {
+		position: absolute;
+		right: 0;
+		bottom: 0;
+	}
+}

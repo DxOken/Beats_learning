@@ -1,0 +1,19 @@
+include /components/elements/button/button
+
+mixin section-trial
+    .trial
+        .trial__content
+            .trial__content-info
+                p.trial__content-info-desc= 'SIMPLE LEARNING PLATFORM'
+                p.trial__content-info-title= 'A quality place for distance learning'
+                p.trial__content-info-text= 'A best and cheapest way of getting know learning to make a better tomorrow '
+                .trial__content-info-btn
+                    +button('fill', 'Start Free Trial')
+            .trial__content-img
+                img(src='assets/img/trial-img.jpg')
+                .trial__dec-img-1
+                    img(src='assets/img/svg/dec-5-1.svg')
+                .trial__dec-img-2
+                    img(src='assets/img/svg/dec-5-2.svg')
+        .trial__dec-img-3
+            img(src='assets/img/svg/dec-5-3.svg')
