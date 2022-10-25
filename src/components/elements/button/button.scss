@@ -10,18 +10,20 @@
 		justify-content: center;
 
 		font-family: Poppins, 'sans-serif';
-		font-size: 15px;
-		line-height: 22px;
+		font-size: res(14, 1170, 20, 1920);
+		line-height: 140%;
 		font-weight: 500;
 		color: #fff;
+
+		@include _1170 {
+			font-size: res(14, 320, 16, 1170);
+		};
 
 
 	}
 
 	&__fill {
 		border: none;
-		width: fit-content;
-		height: 34px;
 		background: #54B8FF;
 		padding: 5px 28px 6px 28px;
 		cursor: pointer;

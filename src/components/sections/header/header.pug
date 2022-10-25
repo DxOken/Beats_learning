@@ -16,6 +16,10 @@ mixin section-header
                     a(href='#')= 'Apparentiships'
                 li.header__menu-item
                     a(href='#')= 'More'
+            .header__btn_open(hidden=false)
+                img(src='assets/img/svg/menu-ico.svg')
+            .header__btn_close(hidden)
+                img(src='assets/img/svg/close.svg')
             .header__btns
                 .header__btns-sign-up
                     +button('text', 'Sign up')
