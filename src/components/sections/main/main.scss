@@ -1,11 +1,12 @@
 .main {
 	position: relative;
 	overflow: hidden;
+	height: res(950, 320, 700, 1920);
 
 	&__content {
 		position: relative;
 		height: 700px;
-		margin-left: 115px;
+		margin-left: res(10, 320, 115, 1920);
 		display: flex;
 
 		&-info {
@@ -13,9 +14,9 @@
 			z-index: 1;
 
 			&-desc {
-				margin-top: 80px;
+				margin-top: res(70, 320, 80, 1920);
 				font-weight: 500;
-				font-size: 20px;
+				font-size: res(16, 320, 20, 1920);
 				line-height: 30px;
 				letter-spacing: 0.235em;
 
@@ -26,9 +27,9 @@
 				margin-top: 15px;
 				margin-left: -5px;
 				font-weight: 700;
-				font-size: 70px;
-				line-height: 82px;
-				width: 700px;
+				font-size: res(34, 320, 70, 1920);
+				line-height: 116.5%;
+				width: res(300, 320, 700, 1920);
 
 				color: #5F596E;
 			}
@@ -36,10 +37,10 @@
 			&-text {
 				margin-top: 30px;
 				font-weight: 500;
-				font-size: 20px;
-				line-height: 31px;
+				font-size: res(16, 320, 20, 1920);
+				line-height: 20px;
 				letter-spacing: 0.05em;
-
+				width: res(230, 320, 700, 1920);
 				color: #000;
 			}
 
@@ -50,8 +51,8 @@
 
 		&-img {
 			position: absolute;
-			right: -420px;
-			top: 0;
+			right: res(-770, 320, -420, 1920);
+			top: res(300, 320, 0, 1920);
 
 		}
 	}
@@ -60,6 +61,10 @@
 		position: absolute;
 		top: -60px;
 		left: -35px;
+
+		@include _1170 {
+			display: none;
+		};
 	}
 	&__dec-img-2 {
 		position: absolute;
@@ -68,7 +73,7 @@
 	}
 	&__dec-img-3 {
 		position: absolute;
-		top: 70px;
+		top: res(170, 320, 70, 1920);
 		right: -38px;
 	}
 	&__dec-img-4 {
@@ -81,11 +86,19 @@
 		bottom: 10px;
 		left: 38%;
 		transform: translate(-50%, 0);
+
+		@include _1170 {
+			display: none;
+		};
 	}
 	&__dec-img-6 {
 		position: absolute;
 		right: 0;
 		bottom: 160px;
+
+		@include _1170 {
+			display: none;
+		};
 	}
 
 
