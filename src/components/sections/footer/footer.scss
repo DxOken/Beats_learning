@@ -1,27 +1,45 @@
 .footer {
-	height: 462px;
-	padding-top: 151px;
+	margin-top: 151px;
+	margin-bottom: 70px;
+	overflow: hidden;
+
+	@include _1170 {
+		margin-bottom: res(20, 320, 70, 1170);
+	};
 
 	&__content {
-		margin-left: 136px;
-		margin-right: 74px;
+		margin-left: res(10, 320, 136, 1920);
+		margin-right: res(10, 320, 74, 1920);
 		display: flex;
 		justify-content: space-between;
+
+		@include _1170 {
+			flex-direction: column-reverse;
+			align-items: center;
+		};
 
 		&-sitemap {
 			display: flex;
 			width: 100%;
 			justify-content: space-between;
 
+			@include _1170 {
+				margin-top: 50px;
+			};
+
 			&-section {
 				font-family: Poppins, sans-serif;
 
 				.title {
 					font-weight: 600;
-					font-size: 20px;
-					line-height: 25px;
+					font-size: res(16, 320, 20, 1920);
+					line-height: perc(25, 20);
 					color: #1C1C1D;
 					margin-bottom: 40px;
+
+					@include _1170 {
+						text-align: center;
+					};
 				}
 
 				.links {
@@ -29,8 +47,13 @@
 					flex-direction: column;
 
 					font-weight: 400;
-					font-size: 16px;
-					line-height: 24px;
+					font-size: res(14, 320, 16, 1920);
+					line-height: perc(24, 16);
+
+					@include _1170 {
+						text-align: center;
+					};
+
 
 
 					.item {
@@ -43,6 +66,10 @@
 
 				&:last-child {
 					margin-right: 130px;
+
+					@include _1170 {
+						margin-right: 0;
+					};
 				}
 			}
 		}
@@ -54,6 +81,11 @@
 				margin-left: 73px;
 				margin-right: 20px;
 				margin-bottom: 25px;
+
+				@include _1170 {
+					margin-left: 0;
+					margin-right: 0;
+				};
 
 				.title {
 					font-family: Poppins, sans-serif;
@@ -68,6 +100,15 @@
 					.item {
 						margin-left: 16px;
 					}
+				}
+			}
+
+			&-map {
+				img {
+					@include _1170 {
+						width: res(300, 320, 600, 1170);
+					};
+
 				}
 			}
 		}
