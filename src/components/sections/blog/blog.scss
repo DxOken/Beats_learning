@@ -1,39 +1,68 @@
 .blog {
-	height: 670px;
 	position: relative;
-	
 	overflow-x: clip;
 
 
 	&__content {
 		padding-top: 130px;
-		margin-left: 115px;
+		margin-left: res(10, 320, 115, 1920);
 		display: flex;
+		
+		@include _1170 {
+			flex-direction: column;
+			align-items: center;
+		};
 
 		&-img {
-			margin-right: 100px;
+			margin-left: res(80, 1170, 200, 1920);
+			margin-right: res(50, 1170, 350, 1920);
+
+			@include _1170 {
+				margin-left: 0;
+				margin-right: 0;
+			};
+
+			img {
+
+				@include _1170 {
+					width: res(300, 320, 540, 1170);
+				};
+			}
 		}
 
 		&-info {
 			margin-top: 115px;
 			font-family: Poppins, sans-serif;
 
+			@include _1170 {
+				margin-top: res(30, 320, 50, 1170);
+				width: res(300, 320, 540, 1170);
+			};
+
 			&-title {
 				font-weight: 700;
-				font-size: 50px;
-				line-height: 62px;
-				width: 540px;
+				font-size: res(30, 320, 50, 1920);
+				line-height: perc(62, 50);
+				width: res(440, 1170, 540, 1920);
 				color: #04004D;
 				margin-bottom: 26px;
+				
+				@include _1170 {
+					width: res(300, 320, 540, 1170);
+				};
 			}
 
 			&-desc {
 				font-weight: 400;
 				font-size: 16px;
-				line-height: 26px;
+				line-height: perc(26, 16);
 				color: #336C61;
 				width: 440px;
 				margin-bottom: 47px;
+
+				@include _1170 {
+					width: res(300, 320, 540, 1170);
+				};
 			}
 		}
 
@@ -41,13 +70,17 @@
 
 	&__dec-img-1 {
 		position: absolute;
-		top: 27px;
-		right: 109px;
+		top: res(-40, 320, 27, 1920);
+		right: res(60, 320, 109, 1920);
+
+		img {
+			width: res(140, 320, 184, 1920);
+		}
 	}
 
 	&__dec-img-2 {
 		position: absolute;
 		right: -60px;
-		bottom: -66px;
+		bottom: res(-90, 320, -66, 1920);
 	}
 }
