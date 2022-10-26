@@ -1,38 +1,74 @@
 .course {
-	height: 600px;
 	position: relative;
+	overflow-x: clip;
 
 	&__content {
 		padding-top: 90px;
-		margin: 0 165px;
+		margin: 0 res(50, 1170, 165, 1920);
 		font-family: Poppins, sans-serif;
+
+		@include _1170 {
+			margin: 0 res(10, 320, 50, 1170);
+		};
+
 
 		&-title {
 			font-weight: 600;
-			font-size: 35px;
-			line-height: 35px;
+			font-size: res(26, 320, 35, 1920);
+			line-height: perc(35, 35);
 			margin-bottom: 15px;
 			color: #000;
+
+			@include _1170 {
+				text-align: center;
+			};
 		}
 
 		&-desc {
 			font-weight: 400;
 			font-size: 16px;
-			line-height: 30px;
+			line-height: perc(30, 16);
 			color: #BDBDBD;
 			margin-bottom: 67px;
+
+			@include _1170 {
+				margin-bottom: res(30, 320, 67, 1170);
+				text-align: center;
+			};
 		}
 
 		&-cards {
 			display: flex;
 			justify-content: space-between;
+			position: relative;
+			z-index: 1;
+
+			@include _1170 {
+				flex-direction: column;
+				align-items: center;
+			};
 
 			&-item {
 				width: 350px;
 				background: #fff;
 
+				@include _1170 {
+					width: res(280, 320, 350, 1170);
+					margin-bottom: res(20, 320, 50, 1170);
+
+					&:last-child {
+						margin-bottom: 0;
+					}
+				};
+
 				.img {
 					margin-bottom: 15px;
+
+					img {
+						@include _1170 {
+							width: res(280, 320, 350, 1170);
+						};
+					}
 				}
 
 				.title {
@@ -42,6 +78,10 @@
 					line-height: 25.5px;
 					color: #000;
 					margin-bottom: 10px;
+
+					@include _1170 {
+						margin-left: res(10, 320, 16, 1170)
+					};
 				}
 
 				.scope {
@@ -51,23 +91,28 @@
 					line-height: 20px;
 					color: #878787;
 					margin-bottom: 33px;
+
+					@include _1170 {
+						margin-left: res(10, 320, 16, 1170)
+					};
 				}
 
 				.info {
 					display: flex;
+					justify-content: space-between;
 					margin-left: 30px;
 					font-weight: 500;
 					font-size: 14px;
 					line-height: 14px;
 					letter-spacing: 0.01em;
 
-					&__price {
-						margin-right: 40px;
-					}
+					@include _1170 {
+						margin-left: res(10, 320, 30, 1170);
+						font-size: res(12, 320, 14, 1170);
+					};
 
 					&__hours {
 						color: #4D4D52;
-						margin-right: 27px;
 						position: relative;
 						padding-left: 20px;
 						
@@ -119,6 +164,10 @@
 		position: absolute;
 		right: 0;
 		bottom: 0;
+
+		@include _1170 {
+			bottom: res(-120, 320, 0, 1170);
+		};
 
 		img {
 			width: 59px;
