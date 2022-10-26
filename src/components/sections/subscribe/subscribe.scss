@@ -1,22 +1,35 @@
 .subscribe {
-	height: 492px;
 	padding-top: 100px;
 	position: relative;
 
 	&__content {
 		background: #ADE5E5;
 		margin: 0 120px;
-		height: 390px;
+		display: flex;
 		justify-content: space-between;
 		position: relative;
 		overflow: hidden;
 
+		@include _1170 {
+			flex-direction: column-reverse;
+			align-items: center;
+			width: res(300, 320, 600, 1170);
+			margin: 0 auto;
+		};
+
 		&-form {
-			left: 100px;
-			top: 67px;
-			position: absolute;
+			margin-left: 100px;
+			margin-top: 67px;
 			z-index: 2;
 			font-family: Poppins, sans-serif;
+
+			@include _1170 {
+				margin-left: 0;
+				margin-bottom: 20px;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+			};
 
 			&-desc {
 				font-weight: 500;
@@ -31,10 +44,14 @@
 			&-title {
 				color: #1B1B1B;
 				font-weight: 600;
-				font-size: 40px;
+				font-size: res(28, 320, 40, 1920);
 				line-height: 52px;
 				margin-bottom: 44px;
 				width: 290px;
+
+				@include _1170 {
+					text-align: center;
+				};
 			}
 
 			&-input {
@@ -49,6 +66,10 @@
 				padding-left: 30px;
 				padding-right: 13px;
 
+				@include _1170 {
+					width: 300px;
+				};
+
 				input {
 					border: none;
 					margin-right: 30px;
@@ -62,6 +83,10 @@
 					text-transform: lowercase;
 					color: #8d8a7a;
 
+					@include _1170 {
+						font-size: res(14, 320, 16, 1170);
+					};
+
 					&:focus {
 						outline: none;
 					}
@@ -70,9 +95,16 @@
 		}
 
 		&-img {
-			position: absolute;
-			right: 180px;
-			bottom: -5px;
+			display: block;
+			margin-top: 20px;
+			z-index: 2;
+
+			@include _1170 {
+				img {
+					width: 300px;
+
+				}
+			};
 		}
 	}
 	
@@ -92,5 +124,9 @@
 		right: 82px;
 		bottom: -148px;
 		z-index: -1;
+
+		@include _1170 {
+			right: res(0, 320, 200, 1170);
+		};
 	}
 }
