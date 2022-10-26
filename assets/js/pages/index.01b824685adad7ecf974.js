@@ -1,9 +1,70 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 248:
+/***/ 230:
 /***/ (() => {
 
+var open = document.querySelector('.header__btn_open'),
+    close = document.querySelector('.header__btn_close'),
+    menu = document.querySelector('.header__menu'),
+    btns = document.querySelector('.header__btns');
+
+if (window.location.hash === '' || window.location.hash === '#home') {
+  menu.firstElementChild.classList.add('selected');
+} else {
+  menu.childNodes.forEach(function (item) {
+    if (item.firstChild.href === window.location.href) {
+      item.classList.add('selected');
+    }
+  });
+}
+
+menu.childNodes.forEach(function (menuItem) {
+  menuItem.addEventListener('click', function () {
+    menu.childNodes.forEach(function (item) {
+      item.classList.remove('selected');
+    });
+    menuItem.classList.add('selected');
+    window.location.replace(menuItem.firstChild.href);
+
+    if (window.innerWidth <= 1170) {
+      close.click();
+    }
+  });
+});
+window.addEventListener('resize', function () {
+  if (window.innerWidth >= 1170 && close.hidden === false) {
+    open.hidden = !open.hidden;
+    close.hidden = !close.hidden;
+    menu.classList.remove('opened');
+    btns.classList.remove('opened');
+  }
+});
+open.addEventListener('click', function () {
+  open.hidden = !open.hidden;
+  close.hidden = !close.hidden;
+  menu.classList.add('opened');
+  btns.classList.add('opened');
+});
+close.addEventListener('click', function () {
+  open.hidden = !open.hidden;
+  close.hidden = !close.hidden;
+  menu.classList.remove('opened');
+  btns.classList.remove('opened');
+});
+
+/***/ }),
+
+/***/ 306:
+/***/ ((__unused_webpack_module, __unused_webpack___webpack_exports__, __webpack_require__) => {
+
+"use strict";
+
+// EXTERNAL MODULE: ./src/components/sections/header/header.js
+var header = __webpack_require__(230);
+;// CONCATENATED MODULE: ./src/layout/main/main.js
+
+;// CONCATENATED MODULE: ./src/pages/index/index.js
 
 
 /***/ }),
@@ -90,7 +151,7 @@ pug_mixins["section-trial"] = pug_interp = function(){
 var block = (this && this.block), attributes = (this && this.attributes) || {};
 pug_html = pug_html + "\u003Cdiv class=\"trial\"\u003E\u003Cdiv class=\"trial__content\"\u003E\u003Cdiv class=\"trial__content-info\"\u003E\u003Cp class=\"trial__content-info-desc\"\u003E" + (pug.escape(null == (pug_interp = 'SIMPLE LEARNING PLATFORM') ? "" : pug_interp)) + "\u003C\u002Fp\u003E\u003Cp class=\"trial__content-info-title\"\u003E" + (pug.escape(null == (pug_interp = 'A quality place for distance learning') ? "" : pug_interp)) + "\u003C\u002Fp\u003E\u003Cp class=\"trial__content-info-text\"\u003E" + (pug.escape(null == (pug_interp = 'A best and cheapest way of getting know learning to make a better tomorrow ') ? "" : pug_interp)) + "\u003C\u002Fp\u003E\u003Cdiv class=\"trial__content-info-btn\"\u003E";
 pug_mixins["button"]('fill', 'Start Free Trial');
-pug_html = pug_html + "\u003C\u002Fdiv\u003E\u003C\u002Fdiv\u003E\u003Cdiv class=\"trial__content-img\"\u003E\u003Cimg src=\"assets\u002Fimg\u002Ftrial-img.jpg\"\u003E\u003Cdiv class=\"trial__dec-img-1\"\u003E\u003Cimg src=\"assets\u002Fimg\u002Fsvg\u002Fdec-5-1.svg\"\u003E\u003C\u002Fdiv\u003E\u003Cdiv class=\"trial__dec-img-2\"\u003E\u003Cimg src=\"assets\u002Fimg\u002Fsvg\u002Fdec-5-2.svg\"\u003E\u003C\u002Fdiv\u003E\u003C\u002Fdiv\u003E\u003C\u002Fdiv\u003E\u003Cdiv class=\"trial__dec-img-3\"\u003E\u003Cimg src=\"assets\u002Fimg\u002Fsvg\u002Fdec-5-3.svg\"\u003E\u003C\u002Fdiv\u003E\u003C\u002Fdiv\u003E";
+pug_html = pug_html + "\u003C\u002Fdiv\u003E\u003C\u002Fdiv\u003E\u003Cdiv class=\"trial__content-img\"\u003E\u003Cimg class=\"trial__content-img-main\" src=\"assets\u002Fimg\u002Ftrial-img.jpg\"\u003E\u003Cdiv class=\"trial__dec-img-1\"\u003E\u003Cimg src=\"assets\u002Fimg\u002Fsvg\u002Fdec-5-1.svg\"\u003E\u003C\u002Fdiv\u003E\u003Cdiv class=\"trial__dec-img-2\"\u003E\u003Cimg src=\"assets\u002Fimg\u002Fsvg\u002Fdec-5-2.svg\"\u003E\u003C\u002Fdiv\u003E\u003C\u002Fdiv\u003E\u003C\u002Fdiv\u003E\u003Cdiv class=\"trial__dec-img-3\"\u003E\u003Cimg src=\"assets\u002Fimg\u002Fsvg\u002Fdec-5-3.svg\"\u003E\u003C\u002Fdiv\u003E\u003C\u002Fdiv\u003E";
 };
 pug_mixins["button"] = pug_interp = function(style, text){
 var block = (this && this.block), attributes = (this && this.attributes) || {};
@@ -144,7 +205,7 @@ pug_html = pug_html + "\u003C\u002Fdiv\u003E";
 };
 pug_mixins["section-header"] = pug_interp = function(){
 var block = (this && this.block), attributes = (this && this.attributes) || {};
-pug_html = pug_html + "\u003Cdiv class=\"header\"\u003E\u003Cdiv class=\"header__content\"\u003E\u003Cdiv class=\"header__logo\"\u003E\u003Cimg src=\"assets\u002Fimg\u002Fsvg\u002Flogo.svg\"\u003E\u003C\u002Fdiv\u003E\u003Cul class=\"header__menu\"\u003E\u003Cli class=\"header__menu-item\"\u003E\u003Ca href=\"#home\"\u003E" + (pug.escape(null == (pug_interp = 'Home') ? "" : pug_interp)) + "\u003C\u002Fa\u003E\u003C\u002Fli\u003E\u003Cli class=\"header__menu-item\"\u003E\u003Ca href=\"#blog\"\u003E" + (pug.escape(null == (pug_interp = 'About Us') ? "" : pug_interp)) + "\u003C\u002Fa\u003E\u003C\u002Fli\u003E\u003Cli class=\"header__menu-item\"\u003E\u003Ca href=\"#course\"\u003E" + (pug.escape(null == (pug_interp = 'Courses') ? "" : pug_interp)) + "\u003C\u002Fa\u003E\u003C\u002Fli\u003E\u003Cli class=\"header__menu-item\"\u003E\u003Ca href=\"#\"\u003E" + (pug.escape(null == (pug_interp = 'Apparentiships') ? "" : pug_interp)) + "\u003C\u002Fa\u003E\u003C\u002Fli\u003E\u003Cli class=\"header__menu-item\"\u003E\u003Ca href=\"#\"\u003E" + (pug.escape(null == (pug_interp = 'More') ? "" : pug_interp)) + "\u003C\u002Fa\u003E\u003C\u002Fli\u003E\u003C\u002Ful\u003E\u003Cdiv class=\"header__btns\"\u003E\u003Cdiv class=\"header__btns-sign-up\"\u003E";
+pug_html = pug_html + "\u003Cdiv class=\"header\"\u003E\u003Cdiv class=\"header__content\"\u003E\u003Cdiv class=\"header__logo\"\u003E\u003Cimg src=\"assets\u002Fimg\u002Fsvg\u002Flogo.svg\"\u003E\u003C\u002Fdiv\u003E\u003Cul class=\"header__menu\"\u003E\u003Cli class=\"header__menu-item\"\u003E\u003Ca href=\"#home\"\u003E" + (pug.escape(null == (pug_interp = 'Home') ? "" : pug_interp)) + "\u003C\u002Fa\u003E\u003C\u002Fli\u003E\u003Cli class=\"header__menu-item\"\u003E\u003Ca href=\"#blog\"\u003E" + (pug.escape(null == (pug_interp = 'About Us') ? "" : pug_interp)) + "\u003C\u002Fa\u003E\u003C\u002Fli\u003E\u003Cli class=\"header__menu-item\"\u003E\u003Ca href=\"#course\"\u003E" + (pug.escape(null == (pug_interp = 'Courses') ? "" : pug_interp)) + "\u003C\u002Fa\u003E\u003C\u002Fli\u003E\u003Cli class=\"header__menu-item\"\u003E\u003Ca href=\"#\"\u003E" + (pug.escape(null == (pug_interp = 'Apparentiships') ? "" : pug_interp)) + "\u003C\u002Fa\u003E\u003C\u002Fli\u003E\u003Cli class=\"header__menu-item\"\u003E\u003Ca href=\"#\"\u003E" + (pug.escape(null == (pug_interp = 'More') ? "" : pug_interp)) + "\u003C\u002Fa\u003E\u003C\u002Fli\u003E\u003C\u002Ful\u003E\u003Cdiv class=\"header__btn_open\"\u003E\u003Cimg src=\"assets\u002Fimg\u002Fsvg\u002Fmenu-ico.svg\"\u003E\u003C\u002Fdiv\u003E\u003Cdiv class=\"header__btn_close\" hidden\u003E\u003Cimg src=\"assets\u002Fimg\u002Fsvg\u002Fclose.svg\"\u003E\u003C\u002Fdiv\u003E\u003Cdiv class=\"header__btns\"\u003E\u003Cdiv class=\"header__btns-sign-up\"\u003E";
 pug_mixins["button"]('text', 'Sign up');
 pug_html = pug_html + "\u003C\u002Fdiv\u003E\u003Cdiv class=\"header__btns-sign-in\"\u003E";
 pug_mixins["button"]('fill', 'Login');
@@ -154,7 +215,7 @@ pug_mixins["section-footer"] = pug_interp = function(){
 var block = (this && this.block), attributes = (this && this.attributes) || {};
 pug_html = pug_html + "\u003Cdiv class=\"footer\"\u003E\u003Cdiv class=\"footer__content\"\u003E\u003Cdiv class=\"footer__content-sitemap\"\u003E\u003Cdiv class=\"footer__content-sitemap-section\"\u003E\u003Cdiv class=\"title\"\u003E" + (pug.escape(null == (pug_interp = 'Pages') ? "" : pug_interp)) + "\u003C\u002Fdiv\u003E\u003Cdiv class=\"links\"\u003E\u003Ca class=\"item\" href=\"#\"\u003E" + (pug.escape(null == (pug_interp = 'Home') ? "" : pug_interp)) + "\u003C\u002Fa\u003E\u003Ca class=\"item\" href=\"#\"\u003E" + (pug.escape(null == (pug_interp = 'About Us') ? "" : pug_interp)) + "\u003C\u002Fa\u003E\u003Ca class=\"item\" href=\"#\"\u003E" + (pug.escape(null == (pug_interp = 'Courses') ? "" : pug_interp)) + "\u003C\u002Fa\u003E\u003Ca class=\"item\" href=\"#\"\u003E" + (pug.escape(null == (pug_interp = 'Blog') ? "" : pug_interp)) + "\u003C\u002Fa\u003E\u003C\u002Fdiv\u003E\u003C\u002Fdiv\u003E\u003Cdiv class=\"footer__content-sitemap-section\"\u003E\u003Cdiv class=\"title\"\u003E" + (pug.escape(null == (pug_interp = 'Resources') ? "" : pug_interp)) + "\u003C\u002Fdiv\u003E\u003Cdiv class=\"links\"\u003E\u003Ca class=\"item\" href=\"#\"\u003E" + (pug.escape(null == (pug_interp = 'Our Homes') ? "" : pug_interp)) + "\u003C\u002Fa\u003E\u003Ca class=\"item\" href=\"#\"\u003E" + (pug.escape(null == (pug_interp = 'Member Stories') ? "" : pug_interp)) + "\u003C\u002Fa\u003E\u003Ca class=\"item\" href=\"#\"\u003E" + (pug.escape(null == (pug_interp = 'Video') ? "" : pug_interp)) + "\u003C\u002Fa\u003E\u003Ca class=\"item\" href=\"#\"\u003E" + (pug.escape(null == (pug_interp = 'Free trial') ? "" : pug_interp)) + "\u003C\u002Fa\u003E\u003C\u002Fdiv\u003E\u003C\u002Fdiv\u003E\u003Cdiv class=\"footer__content-sitemap-section\"\u003E\u003Cdiv class=\"title\"\u003E" + (pug.escape(null == (pug_interp = 'Company') ? "" : pug_interp)) + "\u003C\u002Fdiv\u003E\u003Cdiv class=\"links\"\u003E\u003Ca class=\"item\" href=\"#\"\u003E" + (pug.escape(null == (pug_interp = 'Patnerships') ? "" : pug_interp)) + "\u003C\u002Fa\u003E\u003Ca class=\"item\" href=\"#\"\u003E" + (pug.escape(null == (pug_interp = 'Terms of use') ? "" : pug_interp)) + "\u003C\u002Fa\u003E\u003Ca class=\"item\" href=\"#\"\u003E" + (pug.escape(null == (pug_interp = 'Privacy') ? "" : pug_interp)) + "\u003C\u002Fa\u003E\u003Ca class=\"item\" href=\"#\"\u003E" + (pug.escape(null == (pug_interp = 'Sitemap') ? "" : pug_interp)) + "\u003C\u002Fa\u003E\u003C\u002Fdiv\u003E\u003C\u002Fdiv\u003E\u003C\u002Fdiv\u003E\u003Cdiv class=\"footer__content-contact\"\u003E\u003Cdiv class=\"footer__content-contact-social\"\u003E\u003Cdiv class=\"title\"\u003E" + (pug.escape(null == (pug_interp = 'Find us at') ? "" : pug_interp)) + "\u003C\u002Fdiv\u003E\u003Cdiv class=\"social-list\"\u003E\u003Ca class=\"item facebook\" href=\"\"\u003E\u003Cimg src=\"assets\u002Fimg\u002Fsvg\u002Ffacebook-ico.svg\"\u003E\u003C\u002Fa\u003E\u003Ca class=\"item twitter\" href=\"\"\u003E\u003Cimg src=\"assets\u002Fimg\u002Fsvg\u002Ftwitter-ico.svg\"\u003E\u003C\u002Fa\u003E\u003Ca class=\"item linkedin\" href=\"\"\u003E\u003Cimg src=\"assets\u002Fimg\u002Fsvg\u002Flinkedin-ico.svg\"\u003E\u003C\u002Fa\u003E\u003C\u002Fdiv\u003E\u003C\u002Fdiv\u003E\u003Cdiv class=\"footer__content-contact-map\"\u003E\u003Cimg src=\"assets\u002Fimg\u002Fmap.jpg\"\u003E\u003C\u002Fdiv\u003E\u003C\u002Fdiv\u003E\u003C\u002Fdiv\u003E\u003C\u002Fdiv\u003E";
 };
-pug_html = pug_html + "\u003C!DOCTYPE html\u003E\u003Chtml lang=\"en\"\u003E\u003Chead\u003E\u003Cmeta charset=\"UTF-8\"\u003E\u003Ctitle\u003E" + (pug.escape(null == (pug_interp = 'Beats Learning') ? "" : pug_interp)) + "\u003C\u002Ftitle\u003E\u003C\u002Fhead\u003E\u003Cbody\u003E";
+pug_html = pug_html + "\u003C!DOCTYPE html\u003E\u003Chtml lang=\"en\"\u003E\u003Chead\u003E\u003Cmeta charset=\"UTF-8\"\u003E\u003Cmeta name=\"viewport\" content=\"width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0\"\u003E\u003Cmeta http-equiv=\"X-UA-Compatible\" content=\"ie=edge\"\u003E\u003Ctitle\u003E" + (pug.escape(null == (pug_interp = 'Beats Learning') ? "" : pug_interp)) + "\u003C\u002Ftitle\u003E\u003C\u002Fhead\u003E\u003Cbody\u003E";
 pug_mixins["section-header"]();
 pug_mixins["section-main"]();
 pug_mixins["section-blog"]();
@@ -468,7 +529,7 @@ function pug_rethrow(err, filename, lineno, str){
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	__webpack_require__(227);
-/******/ 	__webpack_require__(248);
+/******/ 	__webpack_require__(306);
 /******/ 	// This entry module is referenced by other modules so it can't be inlined
 /******/ 	var __webpack_exports__ = __webpack_require__(259);
 /******/ 	
